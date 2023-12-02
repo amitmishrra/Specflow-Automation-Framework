@@ -1,0 +1,11 @@
+{
+  "runtime": {
+    "stopAtFirstError": false,
+    "missingOrPendingStepsOutcome": "Inconclusive",
+    "skipParallelizableFeature": false,
+    "stopOnFail": false
+  },
+  "generator": {
+    "allowDebugGeneratedFiles": false
+  }
+}

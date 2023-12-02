@@ -1,0 +1,7 @@
+<RunSettings>
+    <NUnit>
+        <TestInProcess>true</TestInProcess>
+        <MaxCpuCount>2</MaxCpuCount>
+        <UseVsKeepEngineRunning>false</UseVsKeepEngineRunning>
+    </NUnit>
+</RunSettings>
