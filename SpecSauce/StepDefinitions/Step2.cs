@@ -20,6 +20,7 @@ namespace SpecSauce.StepDefinitions
 
         public StepDefinitions(ScenarioContext scenarioContext)
         {
+            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
             _scenarioContext = scenarioContext;
             var tags = _scenarioContext.ScenarioInfo.Tags;
 
@@ -30,7 +31,6 @@ namespace SpecSauce.StepDefinitions
         [Given(@"Multiple browsers at same time ""(.*)""")]
         public void MultipleBrowsers(String browser)
         {
-            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
           TestPage page = new TestPage(driverHandler);
             page.TestMethod();
 
