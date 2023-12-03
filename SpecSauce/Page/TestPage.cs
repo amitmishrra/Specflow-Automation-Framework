@@ -16,7 +16,7 @@ namespace SpecSauce.Page
 
         public void TestMethod()
         {
-            driver.Navigate().GoToUrl("https://www.example.com");
+            driver.Navigate().GoToUrl("https://www.google.com");
             Console.WriteLine("Page title  : " + driver.Title);
             driver.Quit();
         }
