@@ -2,13 +2,13 @@
 using SpecSauce.Drivers;
 using SpecSauce.Page;
 using SpecSauce.Utils;
-[assembly : Parallelizable(ParallelScope.Fixtures)]
+// [assembly : Parallelizable(ParallelScope.Fixtures)]
 
 
 namespace SpecSauce.StepDefinitions
 {
     [Binding]
-    [Parallelizable(ParallelScope.All)]
+    // [Parallelizable(ParallelScope.All)]
 
 
     public class StepDefinitions
