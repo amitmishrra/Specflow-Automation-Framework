@@ -34,7 +34,10 @@ namespace SpecSauce.StepDefinitions
         [Given(@"Multiple browsers at same time ""(.*)""")]
         public void MultipleBrowsers(String browser)
         {
-          TestPage page = new TestPage(driverHandler);
+            string var = Environment.GetEnvironmentVariable("BROWSER", EnvironmentVariableTarget.Process);
+
+            Console.WriteLine(var + "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+            TestPage page = new TestPage(driverHandler);
             page.TestMethod();
 
         }
