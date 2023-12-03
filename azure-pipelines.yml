@@ -1,33 +1,76 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - master
 
-pool: FreePool
+pool:
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    steps:
+    - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+- stage: Test
+  jobs:
+  - job: Test
+    condition: contains(variables['Build.SourceBranch'], 'refs/heads/master') # Run tests only for master branch
+    steps:
+    - task: VSTest@2
+      inputs:
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: |
+          **\bin\$(BuildConfiguration)\**\*Test.dll
+        searchFolder: '$(System.DefaultWorkingDirectory)'
+        runSettingsFile: '$(System.DefaultWorkingDirectory)\path\to\runsettings.runsettings'
+        codeCoverageEnabled: true
+        testFilterCriteria: 'TestCategory=Null'
+      condition: |
+        succeededOrFailed()
+        and(
+          contains(variables['Build.SourceBranch'], 'refs/heads/master'),
+          or(
+            contains(variables['Build.SourceBranch'], 'refs/pull/'),
+            ne(variables['Build.Reason'], 'PullRequest')
+          )
+        )
+        and(
+          eq(variables['Build.SourceBranchName'], 'master'),
+          contains(variables['Build.SourceBranch'], 'refs/heads/')
+        )
+        and(
+          contains(variables['Build.SourceBranch'], 'refs/heads/master'),
+          or(
+            ne(variables['Build.Reason'], 'PullRequest'),
+            succeeded()
+          )
+        )
+        and(
+          ne(variables['Build.Reason'], 'Manual'),
+          ne(variables['Build.Reason'], 'IndividualCI')
+        )
+
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    condition: and(succeeded(), contains(variables['Build.SourceBranch'], 'refs/heads/master'))
+    steps:
+    # Add your deployment steps here
