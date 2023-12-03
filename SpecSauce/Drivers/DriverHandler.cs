@@ -53,7 +53,7 @@ namespace SpecSauce.Drivers
         public void QuitDriver()
         {
             driver?.Quit();
-            driver = null;
+/*            driver = null;*/
         }
     }
 }
