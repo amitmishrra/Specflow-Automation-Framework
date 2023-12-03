@@ -33,7 +33,7 @@ steps:
     configuration: '$(buildConfiguration)'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\bin\$(buildConfiguration)\**\*Test.dll
+      **\bin\$(buildConfiguration)\**\*.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
     runSettingsFile: '$(System.DefaultWorkingDirectory)\path\to\runsettings.runsettings'
     codeCoverageEnabled: true
