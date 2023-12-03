@@ -15,7 +15,8 @@
 trigger:
 - master
 
-pool: FreePool
+pool:
+  name: FreePool
 
 variables:
   solution: '**/*.sln'
@@ -43,9 +44,10 @@ steps:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\bin\Debug\net6.0\SpecSauce.dll
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-          codeCoverageEnabled: true
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
     # testFilterCriteria: 'TestCategory=AMIT'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
