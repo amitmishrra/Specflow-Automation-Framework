@@ -37,4 +37,4 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     runSettingsFile: '$(System.DefaultWorkingDirectory)\path\to\runsettings.runsettings'
     codeCoverageEnabled: true
-    testFilterCriteria: 'TestCategory=Null'
+    testFilterCriteria: 'TestCategory=AMIT'
