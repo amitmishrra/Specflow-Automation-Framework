@@ -20,7 +20,10 @@ namespace SpecSauce.StepDefinitions
 
         public StepDefinitions(ScenarioContext scenarioContext)
         {
-            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhlllllllllllllllllllll");
+            string var = Environment.GetEnvironmentVariable("BROWSER", EnvironmentVariableTarget.Process);
+
+            Console.WriteLine(var + "sfhksdkfsfjhsd");
+
             _scenarioContext = scenarioContext;
             var tags = _scenarioContext.ScenarioInfo.Tags;
 

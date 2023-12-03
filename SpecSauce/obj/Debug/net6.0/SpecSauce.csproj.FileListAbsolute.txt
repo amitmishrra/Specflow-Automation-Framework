@@ -123,3 +123,5 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\refint\SpecSauce
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.pdb
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.genruntimeconfig.cache
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\ref\SpecSauce.dll
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\chromedriver.exe
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\nunit.framework.legacy.dll

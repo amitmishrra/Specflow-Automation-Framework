@@ -74,7 +74,7 @@ namespace SpecSauce.Features
         public virtual void OpenSomethingElse(string browser, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "NUll"};
+                    "AMIT"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -82,24 +82,6 @@ namespace SpecSauce.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Browser", browser);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open something else", null, @__tags, argumentsOfScenario);
-            this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-            testRunner.Given(string.Format("Multiple browsers at same time \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestCaseAttribute("CHROME", null, TestName="OpenSomethingElseAgain with \"CHROME\"")]
-        public virtual void OpenSomethingElseAgain(string browser, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Null"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Browser", browser);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open something else again", null, @__tags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given(string.Format("Multiple browsers at same time \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
