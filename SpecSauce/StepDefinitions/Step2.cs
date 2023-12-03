@@ -27,7 +27,7 @@ namespace SpecSauce.StepDefinitions
             _scenarioContext = scenarioContext;
             var tags = _scenarioContext.ScenarioInfo.Tags;
 
-            driverHandler.RemoteDriverInitializer(tags[0]);
+            driverHandler.RemoteDriverInitializer(var);
             
         }
 
@@ -36,7 +36,6 @@ namespace SpecSauce.StepDefinitions
         {
             string var = Environment.GetEnvironmentVariable("BROWSER", EnvironmentVariableTarget.Process);
 
-            Console.WriteLine(var + "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
             TestPage page = new TestPage(driverHandler);
             page.TestMethod();
 
