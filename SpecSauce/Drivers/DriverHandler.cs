@@ -53,7 +53,7 @@ namespace SpecSauce.Drivers
                         sauceOptions.Add("name", "<your test name>");
                         browserOptions.AddAdditionalOption("sauce:options", sauceOptions);
                         var uri = new Uri("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
-                        var driver = new RemoteWebDriver(uri, browserOptions);
+                        driver = new RemoteWebDriver(uri, browserOptions);
                         break;
                     }
                 default:

@@ -71,8 +71,6 @@ namespace SpecSauce.Features
         }
         
         [NUnit.Framework.TestCaseAttribute("CHROME", null, TestName="OpenSomethingElse with \"CHROME\"")]
-        [NUnit.Framework.TestCaseAttribute("AMIT", null, TestName="OpenSomethingElse with \"AMIT\"")]
-        [NUnit.Framework.TestCaseAttribute("SUNNY", null, TestName="OpenSomethingElse with \"SUNNY\"")]
         public virtual void OpenSomethingElse(string browser, string[] exampleTags)
         {
             string[] @__tags = new string[] {

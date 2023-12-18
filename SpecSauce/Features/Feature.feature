@@ -6,5 +6,3 @@ Scenario Outline: Open something else
 	    Examples:
       | Browser  |
       | CHROME   |
-	  | AMIT     |
-	  | SUNNY   |

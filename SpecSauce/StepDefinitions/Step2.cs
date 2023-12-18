@@ -22,11 +22,10 @@ namespace SpecSauce.StepDefinitions
         {
             string var = Environment.GetEnvironmentVariable("BROWSER", EnvironmentVariableTarget.Process);
 
-            Console.WriteLine(var + "sfhksdkfsfjhsd");
+            Console.WriteLine(var + " sfhksdkfsfjhsd");
 
             _scenarioContext = scenarioContext;
             var tags = _scenarioContext.ScenarioInfo.Tags;
-
             driverHandler.RemoteDriverInitializer(var);
             
         }
