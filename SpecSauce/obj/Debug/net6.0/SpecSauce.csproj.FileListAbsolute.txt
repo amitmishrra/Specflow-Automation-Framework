@@ -1,9 +1,9 @@
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\testhost.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\LivingDoc.Dtos.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\LivingDoc.SpecFlowPlugin.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\testhost.exe
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\testhost.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\chromedriver.exe
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\selenium-manager\linux\selenium-manager
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\selenium-manager\macos\selenium-manager
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\selenium-manager\windows\selenium-manager.exe
@@ -26,6 +26,7 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.Visual
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
@@ -35,6 +36,7 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.Win32.
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\NuGet.Frameworks.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\nunit.framework.dll
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\nunit.framework.legacy.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\WebDriver.Support.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\WebDriver.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\TechTalk.SpecFlow.dll
@@ -123,5 +125,3 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\refint\SpecSauce
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.pdb
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.genruntimeconfig.cache
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\ref\SpecSauce.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\chromedriver.exe
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\nunit.framework.legacy.dll
