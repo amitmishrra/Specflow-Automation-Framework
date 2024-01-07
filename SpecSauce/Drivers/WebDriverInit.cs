@@ -19,15 +19,16 @@ namespace SpecSauce.Drivers
     {
         public IWebDriver GetWebDriver(BrowserType browserType, string platform, string version, string name)
         {
+
             var browserOptions = GetBrowserOptions(browserType);
-            browserOptions.PlatformName = platform;
-            browserOptions.BrowserVersion = version;
+           browserOptions.PlatformName = "Windows 11";
+            browserOptions.BrowserVersion = "latest";
             var sauceOptions = new Dictionary<string, object>();
-            sauceOptions.Add("username", "oauth-g.krishna-d5186");
-            sauceOptions.Add("accessKey", "d4844ea3-f950-40d7-a088-d5ab9c37b1ed");
-            sauceOptions.Add("build", "selenium-build-PM098");
-            sauceOptions.Add("name", name);
-            browserOptions.AddAdditionalOption("sauce:options", sauceOptions);
+            sauceOptions.Add("username", "oauth-nimbusthenewt-f8984");
+            sauceOptions.Add("accessKey", "ca11bdb5-a575-4127-9115-c0c9b82b0058");
+            sauceOptions.Add("build", "selenium-build-G2SYO");
+            sauceOptions.Add("name", "<your test name>");
+            browserOptions.AddAdditionalChromeOption("sauce:options", sauceOptions);
             var uri = new Uri("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
             var driver = new RemoteWebDriver(uri, browserOptions);
             return driver;
