@@ -1,33 +1,57 @@
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using Saucelabs;
 using SpecSauce.Drivers;
-using System;
-using TechTalk.SpecFlow;
-using WebDriverInit = Saucelabs.WebDriverInit;
-[assembly: Parallelizable(ParallelScope.Fixtures)]
+
+[assembly: Parallelize(Workers = 4, Scope = ExecutionScope.ClassLevel)]
 
 namespace SpecSauce.StepDefinitions
 {
     [Binding]
-    [TestFixture]
     public class NewFeatureWileStepDefinitions
     {
+        [BeforeScenario]
+        [Obsolete]
+        public static void BeforeScenario()
+        {
+            var scenarioInfo = ScenarioContext.Current.ScenarioInfo;
+
+            var tags = scenarioInfo.Tags;
+            var browser = scenarioInfo.Arguments["Browser"];
+
+                if (!tags.Contains("CrossBrowser") && browser.ToString() != "CHROME")
+                {
+                    Console.WriteLine("SKIPPPP");
+                    ScenarioContext.Current.Pending();
+                }
+                else
+                {
+                    Console.WriteLine("runnnnn Alll");
+                }  
+        }
 
         public IWebDriver driver;
-        WebDriverInit webDriverInit = new WebDriverInit();
+        WebDriverInit webdriverinit = new WebDriverInit();
 
+       
         [Given(@"Launch the browser ""([^""]*)""")]
         
         public void GivenLaunchTheBrowser(string browser)
         {
-            driver = WebDriverInit.GetWebDriver(selectBrowser(browser), "Windows 10", "latest", browser);
+            var scenarioInfo = ScenarioContext.Current.ScenarioInfo;
+            var tags = scenarioInfo.Tags;
+            ThreadManagement management = new ThreadManagement();
+            management.RunInThreads(tags, (browser) =>
+            {
+                driver = webdriverinit.GetWebDriver(selectBrowser(browser), "Windows 10", "latest", browser, false);
+                WhenOpenTheGoogle();
+            });
         }
 
         [When(@"Open the google")]
         public void WhenOpenTheGoogle()
         {
-            driver.Navigate().GoToUrl("https://www.google.com");
+           driver.Navigate().GoToUrl("https://www.google.com");
+           Console.WriteLine(driver.Title + " : LAUNCHED IN : " );
         }
 
         [Then(@"Close the Browser")]

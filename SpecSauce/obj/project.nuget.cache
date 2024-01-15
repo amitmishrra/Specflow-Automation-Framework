@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pSQy7mPT2g5bwgHkpJhN63TLbq5mD3xwgy0y1tlJVVbMfz4FcYZj6ejmdvFeMnEVkJFUa2VivvSL+6KWZTHXzQ==",
+  "dgSpecHash": "XTU554i6kIvFLtgaKktTaizmKgVwXNSVKQbAX4SX5y/+HEidVZ+VQsj3UT15EI6nUGjawIIRq6WKsjToLnu0zw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\SpecSauce.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\Amit\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Amit\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\nunit\\4.0.1\\nunit.4.0.1.nupkg.sha512",
