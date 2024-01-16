@@ -16,7 +16,7 @@ namespace SpecSauce.Drivers
             if (useRemoteWebDriver)
             {
                 var browserOptions = GetBrowserOptions(browserType);
-                browserOptions.PlatformName = platform;
+                browserOptions.PlatformName = browserType == BrowserType.Safari ? "macos" : "windows";
                 browserOptions.BrowserVersion = version;
 
                 var sauceOptions = new Dictionary<string, object>

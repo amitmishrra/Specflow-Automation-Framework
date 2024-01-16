@@ -87,6 +87,8 @@ namespace SpecSauce.Features
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given(string.Format("Launch the browser \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.When("Open the google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Close the Browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
