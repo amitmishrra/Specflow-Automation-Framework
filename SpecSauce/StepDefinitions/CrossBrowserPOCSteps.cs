@@ -35,51 +35,50 @@ namespace SpecSauce.StepDefinitions
         {
             management.RunInThreads(variables.browsersArray, (browser) =>
             {
-                driverThread.Value = new BrowserEngine(management.selectBrowser(browser))
+                this._browser = new BrowserEngine(management.selectBrowser(browser))
                      .LaunchBrowser("latest", browser == "SAFARI" ? "macOS 13" : "Windows 10", "oauth-nimbusthenewt-f8984", "ca11bdb5-a575-4127-9115-c0c9b82b0058", "testbuild", "Title", 6000, runLocallyFlag);
                 /*var _driver = this._browser;*/
-               /* driversList.Add(_driver);*/
+                driversList.Add(this._browser);
             });
         }
 
         [When(@"Open the google")]
         public void WhenOpenTheGoogle()
         {
-            /*management.ThreadWrapper(driversList, (driver) =>
+            management.ThreadWrapper(driversList, (driver) =>
             {
-               
-            });*/
-            page.VisitPage(driverThread.Value);
+                page.VisitPage(driver);
+            });
         }
 
         [When(@"Input values")]
         public void InputValues()
         {
-            /*management.ThreadWrapper(driversList, (driver) =>
+            management.ThreadWrapper(driversList, (driver) =>
             {
-            });*/
-            page.InputValues(driverThread.Value);
+                page.InputValues(driver);
+            });
 
         }
 
         [When(@"Perform Login")]
         public void Login()
         {
-            /*management.ThreadWrapper(driversList, (driver) =>
+            management.ThreadWrapper(driversList, (driver) =>
             {
-            });*/
-            page.ClickSubmit(driverThread.Value);
+                page.ClickSubmit(driver);
+
+            });
 
         }
 
         [Then(@"Close the Browser")]
         public void ThenCloseTheBrowser()
         {
-            /*management.ThreadWrapper(driversList, (driver) =>
+            management.ThreadWrapper(driversList, (driver) =>
             {
                 driver.Close();
-            });*/
-            driverThread.Value.Quit();
+            });
         }
 
        
