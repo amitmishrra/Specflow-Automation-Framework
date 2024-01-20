@@ -105,5 +105,14 @@
         /// The Safari options.
         /// </value>
         public SafariOptions SafariOptions { get; set; }
+
+
+        /// <summary>
+        /// Gets the value of URI
+        /// </summary>
+        /// <value>
+        /// Saucelab URI
+        /// </value>
+        public Uri uri = new Uri("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
     }
 }

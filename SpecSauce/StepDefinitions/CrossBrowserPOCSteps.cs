@@ -2,6 +2,8 @@ using Drivers.BrowserEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SpecSauce.Drivers;
+using SpecSauce.Page;
+using SpecSauce.Support;
 
 [assembly: Parallelize(Workers = 4, Scope = ExecutionScope.ClassLevel)]
 
@@ -11,78 +13,75 @@ namespace SpecSauce.StepDefinitions
     public class CrossBrowserPOCSteps
     {
 
-        public BrowserEngine _browser;
+        public IWebDriver _browser;
+        public IWebDriver driver;
+        public bool runLocallyFlag = true;
+        CommonVariables variables = new CommonVariables();
+        ThreadManagement management = new ThreadManagement();
+        List<IWebDriver> driversList = new List<IWebDriver>();
+        ThreadLocal<IWebDriver> driverThread = new ThreadLocal<IWebDriver> ();
+        TestPage page = new TestPage();
+
         [BeforeScenario]
         [Obsolete]
         public static void BeforeScenario()
         {
             var scenarioInfo = ScenarioContext.Current.ScenarioInfo;
-
-            var tags = scenarioInfo.Tags;
-            var browser = scenarioInfo.Arguments["Browser"];
-
-                if (!tags.Contains("CrossBrowser") && browser.ToString() != "CHROME")
-                {
-                    Console.WriteLine("SKIPPPP");
-                    ScenarioContext.Current.Pending();
-                }
-                else
-                {
-                    Console.WriteLine("runnnnn Alll");
-                }  
         }
 
        
         [Given(@"Launch the browser ""([^""]*)""")]
-        
         public void GivenLaunchTheBrowser(string browser)
         {
-            var scenarioInfo = ScenarioContext.Current.ScenarioInfo;
-            var tags = scenarioInfo.Tags;
-            ThreadManagement management = new ThreadManagement();
-            management.RunInThreads(tags, (browser) =>
+            management.RunInThreads(variables.browsersArray, (browser) =>
             {
-                /*driver = webdriverinit.GetWebDriver(selectBrowser(browser), "Windows 10", "latest", browser, false);
-                WhenOpenTheGoogle();*/
-                this._browser = new BrowserEngine(selectBrowser(browser))
-                    .LaunchOnSauceLabs("latest", "windows", "oauth-nimbusthenewt-f8984", "ca11bdb5-a575-4127-9115-c0c9b82b0058", "testbuild", "Title", 6000);
-               
-                
+                driverThread.Value = new BrowserEngine(management.selectBrowser(browser))
+                     .LaunchBrowser("latest", browser == "SAFARI" ? "macOS 13" : "Windows 10", "oauth-nimbusthenewt-f8984", "ca11bdb5-a575-4127-9115-c0c9b82b0058", "testbuild", "Title", 6000, runLocallyFlag);
+                /*var _driver = this._browser;*/
+               /* driversList.Add(_driver);*/
             });
         }
 
         [When(@"Open the google")]
         public void WhenOpenTheGoogle()
         {
-            this._browser.Navigate("https://www.google.com/");
+            /*management.ThreadWrapper(driversList, (driver) =>
+            {
+               
+            });*/
+            page.VisitPage(driverThread.Value);
+        }
+
+        [When(@"Input values")]
+        public void InputValues()
+        {
+            /*management.ThreadWrapper(driversList, (driver) =>
+            {
+            });*/
+            page.InputValues(driverThread.Value);
+
+        }
+
+        [When(@"Perform Login")]
+        public void Login()
+        {
+            /*management.ThreadWrapper(driversList, (driver) =>
+            {
+            });*/
+            page.ClickSubmit(driverThread.Value);
+
         }
 
         [Then(@"Close the Browser")]
         public void ThenCloseTheBrowser()
         {
-            this._browser.WebDriver.Close();
+            /*management.ThreadWrapper(driversList, (driver) =>
+            {
+                driver.Close();
+            });*/
+            driverThread.Value.Quit();
         }
 
-        public BrowserType selectBrowser(string Browser)
-        {
-            if(Browser == "CHROME")
-            {
-                return BrowserType.Chrome;
-            }
-            else if(Browser == "EDGE")
-            {
-                return BrowserType.Edge;
-            }else if(Browser == "FIREFOX")
-            {
-                return BrowserType.Firefox;
-            }else if(Browser == "SAFARI")
-            {
-                return BrowserType.Safari;
-            }
-            else
-            {
-                return BrowserType.Chrome;
-            }
-        }
+       
     }
 }

@@ -71,7 +71,6 @@ namespace SpecSauce.Features
         }
         
         [NUnit.Framework.TestCaseAttribute("CHROME", null, TestName="RunNew with \"CHROME\"")]
-        [NUnit.Framework.TestCaseAttribute("EDGE", null, TestName="RunNew with \"EDGE\"")]
         public virtual void RunNew(string browser, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -88,6 +87,8 @@ namespace SpecSauce.Features
             this.ScenarioStart();
             testRunner.Given(string.Format("Launch the browser \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When("Open the google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("Input values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("Perform Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Close the Browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
