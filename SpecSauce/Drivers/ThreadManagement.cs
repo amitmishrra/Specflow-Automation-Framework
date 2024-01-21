@@ -1,6 +1,8 @@
 ﻿using Drivers.BrowserEngine;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+using SpecSauce.Support;
 using System;
 using System.Threading.Tasks;
 
@@ -9,8 +11,15 @@ namespace SpecSauce.Drivers
     public class ThreadManagement
     {
         public BrowserEngine _browser;
+        CommonVariables variables;
+         
+        public ThreadManagement(CommonVariables variables)
+        {
+            this.variables = variables;
+        }
 
-        public void RunInThreads(string[] browserNames, Action<String> callback)
+
+        public void RunInThreads(List<String> browserNames, Action<String> callback)
         {
             Parallel.ForEach(browserNames, browserName =>
             {
@@ -41,11 +50,21 @@ namespace SpecSauce.Drivers
             }
         }
 
-        public void ThreadWrapper(IList<IWebDriver> drivers, Action<IWebDriver> callback)
+        public void ThreadWrapper(Action<IWebDriver> callback)
         {
-            Parallel.ForEach(drivers, driver =>
+            Parallel.ForEach(variables.driversList, driver =>
             {
-                callback(driver);
+                string browserName = ((IHasCapabilities)driver).Capabilities.GetCapability("browserName").ToString();
+
+                try
+                {
+                    callback(driver);
+                }
+                catch (Exception e)
+                {
+                    driver.Close();
+                    Console.WriteLine($"Error occurred in browser '{browserName}': {e.Message}");
+                }
             });
         }
     }

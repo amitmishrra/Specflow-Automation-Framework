@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace SpecSauce.Support
 {
     public class CommonVariables
     {
-        public String[] browsersArray = { "CHROME", "EDGE" }; 
+        public List<string> browsersArray = new List<string> { "CHROME", "EDGE" };
+        public List<IWebDriver> driversList = new List<IWebDriver>();
     }
 }

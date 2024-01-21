@@ -14,7 +14,7 @@ namespace SpecSauce.Page
 
         public void InputValues(IWebDriver driver)
         {
-            driver.FindElement(By.XPath("//*[@id=\"username\"]")).SendKeys("student");
+            driver.FindElement(By.XPath("//*[@id=\"user\"]")).SendKeys("student");
             driver.FindElement(By.XPath("//*[@id=\"password\"]")).SendKeys("Password123");
         }
 
