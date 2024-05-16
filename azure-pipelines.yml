@@ -1,13 +1,8 @@
-# ASP.NET Core (.NET Framework)
-
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - master
 
-pool: FreePool
+pool:
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -35,10 +30,22 @@ steps:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\bin\Debug\net6.0\SpecSauce.dll
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-          codeCoverageEnabled: true
-    testFilterCriteria: 'TestCategory=AMIT'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    testFiltercriteria: 'TestCategory=AMIT'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: 'log4net.config'
+    TargetFolder: '$(build.artifactStagingDirectory)'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(build.artifactStagingDirectory)'
+    artifact: 'log4netConfiguration'
