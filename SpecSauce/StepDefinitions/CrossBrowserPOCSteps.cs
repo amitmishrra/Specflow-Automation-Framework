@@ -11,7 +11,6 @@ using TechTalk.SpecFlow.UnitTestProvider;
 
 [assembly: Parallelize(Workers = 4, Scope = ExecutionScope.ClassLevel)]
 [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
-
 namespace SpecSauce.StepDefinitions
 {
     [Binding]
