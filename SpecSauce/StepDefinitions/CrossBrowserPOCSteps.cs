@@ -1,4 +1,5 @@
 using Drivers.BrowserEngine;
+using log4net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SpecSauce.Drivers;
@@ -9,6 +10,7 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.UnitTestProvider;
 
 [assembly: Parallelize(Workers = 4, Scope = ExecutionScope.ClassLevel)]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
 
 namespace SpecSauce.StepDefinitions
 {
@@ -39,9 +41,10 @@ namespace SpecSauce.StepDefinitions
         private string safariBrowserVersion;
         private bool crossBrowserTestingEnabled;
         private readonly IUnitTestRuntimeProvider _unitTestRuntimeProvider;
+        private static readonly ILog log = LogManager.GetLogger(typeof(CrossBrowserPOCSteps));
 
 
-          
+
 
         public CrossBrowserPOCSteps()
         {
@@ -67,10 +70,11 @@ namespace SpecSauce.StepDefinitions
         public void BeforeScenario()
         {
             var scenarioInfo = ScenarioContext.Current.ScenarioInfo;
-            if (!scenarioInfo.Tags.Contains("CROSSBROWSER") && this.crossBrowserTestingEnabled)
+            if (!scenarioInfo.Tags.Contains("CROSSBROWSER") && !this.crossBrowserTestingEnabled)
             {
                 variables.browsersArray.Clear();
                 variables.browsersArray.Add("CHROME");
+                this.runLocallyFlag = true;
             }
         }
 
@@ -91,18 +95,22 @@ namespace SpecSauce.StepDefinitions
         public void WhenOpenTheGoogle()
         {
             management.ThreadWrapper((driver) =>{page.VisitPage(driver);});
+            log.Info("Open the google");
+
         }
 
         [When(@"Input values")]
         public void InputValues()
         {
             management.ThreadWrapper((driver) =>{page.InputValues(driver);});
+            log.Info("Input values");
         }
 
         [When(@"Perform Login")]
         public void Login()
         {
             management.ThreadWrapper((driver) =>{page.ClickSubmit(driver);});
+            log.Info("Perform Login");
 
         }
 
@@ -110,6 +118,7 @@ namespace SpecSauce.StepDefinitions
         public void ThenCloseTheBrowser()
         {
             management.ThreadWrapper( (driver) =>{driver.Close(); });
+            log.Info("Close the Browser");
         }
 
        

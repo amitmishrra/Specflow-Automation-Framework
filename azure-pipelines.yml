@@ -28,6 +28,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**/log4net.config'
+    TargetFolder: '$(build.artifactStagingDirectory)'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -35,10 +41,16 @@ steps:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\bin\Debug\net6.0\SpecSauce.dll
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-          codeCoverageEnabled: true
-    # testFilterCriteria: 'TestCategory=AMIT'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
+
+# Add an additional step to publish the Log4net configuration file
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(build.artifactStagingDirectory)/log4net.config'
+    artifact: 'log4netConfig'

@@ -32,7 +32,6 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPl
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\NuGet.Frameworks.dll
@@ -44,7 +43,6 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\TechTalk.SpecFlo
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\SpecFlow.Contrib.Variants.SpecFlowPlugin.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\SpecFlow.Internal.Json.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
@@ -125,8 +123,6 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\ru\Microsoft.Vis
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
@@ -135,9 +131,12 @@ C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.Genera
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.AssemblyInfoInputs.cache
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.AssemblyInfo.cs
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.csproj.CoreCompileInputs.cache
-C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.csproj.CopyComplete
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.sourcelink.json
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.csproj.Up2Date
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\refint\SpecSauce.dll
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.pdb
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\SpecSauce.genruntimeconfig.cache
 C:\Users\Amit\source\repos\SpecSauce\SpecSauce\obj\Debug\net6.0\ref\SpecSauce.dll
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\log4net.config
+C:\Users\Amit\source\repos\SpecSauce\SpecSauce\bin\Debug\net6.0\log4net.dll

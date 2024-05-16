@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -66,15 +71,15 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.15.0, )"
+              "version": "[4.20.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.15.0, )"
+              "version": "[4.20.0, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[119.0.6045.10500, )"
+              "version": "[125.0.6422.6000, )"
             },
             "SpecFlow.Contrib.Variants": {
               "target": "Package",
@@ -88,9 +93,13 @@
               "target": "Package",
               "version": "[3.9.57, )"
             },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.17, )"
+            },
             "nunit": {
               "target": "Package",
-              "version": "[4.0.1, )"
+              "version": "[4.1.0, )"
             }
           },
           "imports": [
@@ -109,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

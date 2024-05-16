@@ -384,3 +384,12 @@ $RECYCLE.BIN/
 
 # Mono Auto Generated Files
 mono
+
+# Visual Studio files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.vscode
