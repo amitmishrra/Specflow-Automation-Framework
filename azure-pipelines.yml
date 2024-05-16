@@ -1,13 +1,8 @@
-# ASP.NET Core (.NET Framework)
-
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - master
 
-pool: FreePool
+pool:
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -28,12 +23,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**/log4net.config'
-    TargetFolder: '$(build.artifactStagingDirectory)'
-
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -44,13 +33,13 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
 
-- task: PublishTestResults@2
+- task: CopyFiles@2
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: 'log4net.config'
+    TargetFolder: '$(build.artifactStagingDirectory)'
 
-# Add an additional step to publish the Log4net configuration file
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(build.artifactStagingDirectory)/log4net.config'
-    artifact: 'log4netConfig'
+    targetPath: '$(build.artifactStagingDirectory)'
+    artifact: 'log4netConfiguration'
