@@ -1,6 +1,6 @@
 Feature: New Feature wile
 
-@AMIT
+@CHROME
 Scenario Outline: Run New 
 	 Given Launch the browser "<Browser>"
 	 When Open the google
