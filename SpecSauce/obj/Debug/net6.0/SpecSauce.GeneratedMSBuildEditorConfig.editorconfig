@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SpecSauce
-build_property.ProjectDir = C:\Users\Amit\source\repos\SpecSauce\SpecSauce\
+build_property.ProjectDir = C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

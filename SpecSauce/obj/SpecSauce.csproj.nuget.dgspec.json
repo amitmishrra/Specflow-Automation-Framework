@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\SpecSauce.csproj": {}
+    "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\SpecSauce.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\SpecSauce.csproj": {
+    "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\SpecSauce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\SpecSauce.csproj",
+        "projectUniqueName": "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\SpecSauce.csproj",
         "projectName": "SpecSauce",
-        "projectPath": "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\SpecSauce.csproj",
+        "projectPath": "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\SpecSauce.csproj",
         "packagesPath": "C:\\Users\\Amit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amit\\source\\repos\\SpecSauce\\SpecSauce\\obj\\",
+        "outputPath": "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Amit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,10 +49,6 @@
               "target": "Package",
               "version": "[6.12.0, )"
             },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.8.0, )"
@@ -71,15 +67,15 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.20.0, )"
+              "version": "[4.15.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.20.0, )"
+              "version": "[4.15.0, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[125.0.6422.6000, )"
+              "version": "[119.0.6045.10500, )"
             },
             "SpecFlow.Contrib.Variants": {
               "target": "Package",
@@ -99,7 +95,7 @@
             },
             "nunit": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[4.0.1, )"
             }
           },
           "imports": [

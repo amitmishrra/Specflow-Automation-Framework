@@ -5,23 +5,20 @@ namespace SpecSauce.Page
 {
     public class TestPage
     {
-     
-        public void VisitPage(IWebDriver driver)
+        private readonly DriverHandler driverHandler;
+        private IWebDriver driver;
+
+        public TestPage(DriverHandler driverHandler)
         {
-            driver.Navigate().GoToUrl("https://practicetestautomation.com/practice-test-login/");
+            this.driverHandler = driverHandler;
+            this.driver = driverHandler.driver;
+        }
+
+        public void TestMethod()
+        {
+            driver.Navigate().GoToUrl("https://www.google.com");
             Console.WriteLine("Page title  : " + driver.Title);
-        }
-
-        public void InputValues(IWebDriver driver)
-        {
-            driver.FindElement(By.XPath("//*[@id=\"user\"]")).SendKeys("student");
-            driver.FindElement(By.XPath("//*[@id=\"password\"]")).SendKeys("Password123");
-        }
-
-        public void ClickSubmit(IWebDriver driver)
-        {
-            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
-            Console.WriteLine("Logged in Success");
+            driver.Quit();
         }
     }
 }

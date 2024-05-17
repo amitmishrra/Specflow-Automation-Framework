@@ -6,40 +6,32 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Safari;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SpecSauce.Drivers
+
 {
+
+
     public class WebDriverInit
     {
-        public IWebDriver GetWebDriver(BrowserType browserType, string platform, string version, string name, bool useRemoteWebDriver)
+        public IWebDriver GetWebDriver(BrowserType browserType, string platform, string version, string name)
         {
-            if (useRemoteWebDriver)
-            {
-                var browserOptions = GetBrowserOptions(browserType);
-                browserOptions.PlatformName = browserType == BrowserType.Safari ? "macos" : "windows";
-                browserOptions.BrowserVersion = version;
 
-                var sauceOptions = new Dictionary<string, object>
-                {
-                    { "username", "oauth-nimbusthenewt-f8984" },
-                    { "accessKey", "ca11bdb5-a575-4127-9115-c0c9b82b0058" },
-                    { "build", "ParallelExection" },
-                    { "name", name },
-                };
-
-                browserOptions.AddAdditionalChromeOption("sauce:options", sauceOptions);
-
-                var uri = new Uri("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
-                var driver = new RemoteWebDriver(uri, browserOptions);
-
-                return driver;
-            }
-            else
-            {
-                var localDriver = GetLocalWebDriver(browserType);
-                localDriver.Manage().Window.Maximize();
-                return localDriver;
-            }
+            var browserOptions = GetBrowserOptions(browserType);
+           browserOptions.PlatformName = "Windows 11";
+            browserOptions.BrowserVersion = "latest";
+            var sauceOptions = new Dictionary<string, object>();
+            sauceOptions.Add("username", "oauth-nimbusthenewt-f8984");
+            sauceOptions.Add("accessKey", "ca11bdb5-a575-4127-9115-c0c9b82b0058");
+            sauceOptions.Add("build", "selenium-build-G2SYO");
+            sauceOptions.Add("name", "<your test name>");
+            browserOptions.AddAdditionalChromeOption("sauce:options", sauceOptions);
+            var uri = new Uri("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
+            var driver = new RemoteWebDriver(uri, browserOptions);
+            return driver;
         }
 
         public dynamic GetBrowserOptions(BrowserType browserType)
@@ -47,9 +39,7 @@ namespace SpecSauce.Drivers
             switch (browserType)
             {
                 case BrowserType.Chrome:
-                    var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("--start-maximized");
-                    return chromeOptions;
+                    return new ChromeOptions();
                 case BrowserType.Firefox:
                     return new FirefoxOptions();
                 case BrowserType.Edge:
@@ -60,23 +50,5 @@ namespace SpecSauce.Drivers
                     throw new ArgumentOutOfRangeException(nameof(browserType), browserType, null);
             }
         }
-
-        private IWebDriver GetLocalWebDriver(BrowserType browserType)
-        {
-            switch (browserType)
-            {
-                case BrowserType.Chrome:
-                    return new ChromeDriver();
-                case BrowserType.Firefox:
-                    return new FirefoxDriver();
-                case BrowserType.Edge:
-                    return new EdgeDriver();
-                case BrowserType.Safari:
-                    return new SafariDriver();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(browserType), browserType, null);
-            }
-        }
     }
-
 }
