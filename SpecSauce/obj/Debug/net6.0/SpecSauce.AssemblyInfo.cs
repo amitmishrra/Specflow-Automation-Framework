@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpecSauce")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bf0a864beb003c7be3241d31c6219319ff892ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76145580f2a6bd854c729b7e6f129c25a9b648ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpecSauce")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpecSauce")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -71,24 +71,16 @@ namespace SpecSauce.Features
         }
         
         [NUnit.Framework.TestCaseAttribute("CHROME", null, TestName="RunNew with \"CHROME\"")]
+        [NUnit.Framework.TestCaseAttribute("EDGE", null, TestName="RunNew with \"EDGE\"")]
         public virtual void RunNew(string browser, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "CHROME",
-                    "EDGE"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Browser", browser);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run New", null, @__tags, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run New", null, exampleTags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given(string.Format("Launch the browser \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When("Open the google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("Input values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("Perform Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Close the Browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
