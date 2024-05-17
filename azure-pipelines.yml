@@ -37,7 +37,7 @@ steps:
       **\bin\Debug\net6.0\SpecSauce.dll
       searchFolder: '$(System.DefaultWorkingDirectory)'
           codeCoverageEnabled: true
-    testFilterCriteria: 'TestCategory=CHROME'
+    # testFilterCriteria: 'TestCategory=AMIT'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
