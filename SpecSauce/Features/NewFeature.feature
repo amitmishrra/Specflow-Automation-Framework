@@ -12,3 +12,4 @@ Scenario Outline: Run New
 	  Examples:
 	| Browser |
 	| CHROME  |
+	| EDGE    |
