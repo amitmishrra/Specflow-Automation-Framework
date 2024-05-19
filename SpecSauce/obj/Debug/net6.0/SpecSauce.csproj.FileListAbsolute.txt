@@ -255,3 +255,6 @@ C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\obj\Debug\ne
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\obj\Debug\net6.0\ref\SpecSauce.dll
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\bin\Debug\net6.0\log4net.config
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\bin\Debug\net6.0\log4net.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\bin\Debug\net6.0\Serilog.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\SpecSauce\bin\Debug\net6.0\Serilog.Sinks.File.dll

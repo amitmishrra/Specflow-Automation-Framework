@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "61N7RW9IaS3S04ukeQts71KI3nAPHxslLf8BtA5ieogBxbTqZVbA80XYkgXF8ECbnObMfmboLA/fX5Tjnzfokw==",
+  "dgSpecHash": "3SKIWotijAixTQv9NmEtki/NH+VMOv0IYNXF0tr30VnVZ40PjKzTQov3LmWuRGZOJqqyu40gn7ieHmu3TuNxag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amit\\Desktop\\spec2\\Specflow-Automation-Framework\\SpecSauce\\SpecSauce.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,9 @@
     "C:\\Users\\Amit\\.nuget\\packages\\selenium.support\\4.15.0\\selenium.support.4.15.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\selenium.webdriver.chromedriver\\119.0.6045.10500\\selenium.webdriver.chromedriver.119.0.6045.10500.nupkg.sha512",
+    "C:\\Users\\Amit\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
+    "C:\\Users\\Amit\\.nuget\\packages\\serilog.sinks.console\\5.0.1\\serilog.sinks.console.5.0.1.nupkg.sha512",
+    "C:\\Users\\Amit\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\specflow\\3.9.74\\specflow.3.9.74.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\specflow.contrib.variants\\3.9.80\\specflow.contrib.variants.3.9.80.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\specflow.internal.json\\1.0.8\\specflow.internal.json.1.0.8.nupkg.sha512",

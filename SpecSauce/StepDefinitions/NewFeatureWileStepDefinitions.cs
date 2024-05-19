@@ -2,6 +2,7 @@ using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using Saucelabs;
+using Serilog;
 using SpecSauce.Drivers;
 using System;
 using TechTalk.SpecFlow;
@@ -17,28 +18,36 @@ namespace SpecSauce.StepDefinitions
 
         public IWebDriver driver;
         WebDriverInit webDriverInit = new WebDriverInit();
-        private readonly ILog logger = LogManager.GetLogger(typeof(NewFeatureWileStepDefinitions));
+/*        private readonly ILog logger = LogManager.GetLogger(typeof(NewFeatureWileStepDefinitions));
+*/
+        public  NewFeatureWileStepDefinitions()
+        {
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+        }
 
         [Given(@"Launch the browser ""([^""]*)""")]
-        
         public void GivenLaunchTheBrowser(string browser)
         {
             driver = WebDriverInit.GetWebDriver(selectBrowser(browser), "Windows 10", "latest", browser);
-            logger.Info("This is test");
+            Log.Information("This is test");
         }
 
         [When(@"Open the google")]
         public void WhenOpenTheGoogle()
         {
             driver.Navigate().GoToUrl("https://www.google.com");
-            logger.Info("This is test 2");
+            Log.Information("This is test 2");
 
         }
 
         [Then(@"Close the Browser")]
         public void ThenCloseTheBrowser()
         {
-            logger.Info("This is test 3");
+            Log.Information("This is test 3");
             driver.Quit();
         }
 
