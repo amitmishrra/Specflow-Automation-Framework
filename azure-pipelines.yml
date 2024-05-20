@@ -13,7 +13,7 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: '5.x.x' # Adjust the version as necessary
+    version: '5.0.x'  # Specify the latest version within the 5.0 major version
 
 - task: NuGetToolInstaller@1
 
@@ -43,7 +43,7 @@ steps:
       **\bin\$(buildConfiguration)\**\*test*.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
-    diagnosticsEnabled: true  # Add this line to enable diagnostic logging
+    diagnosticsEnabled: true  # Enable diagnostic logging
     runSettingsFile: '**/*.runsettings'  # Optional: specify a run settings file if you have one
 
 - task: PublishTestResults@2
