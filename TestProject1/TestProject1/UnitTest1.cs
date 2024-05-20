@@ -1,6 +1,7 @@
 using log4net;
+using log4net.Config;
 
-[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
+[assembly: XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
 namespace TestProject1
 {
     [TestClass]

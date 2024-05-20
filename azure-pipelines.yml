@@ -1,7 +1,8 @@
 trigger:
 - master
 
-pool: FreePool
+pool: 
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -9,6 +10,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '5.x.x' # Adjust the version as necessary
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -37,8 +43,12 @@ steps:
       **\bin\$(buildConfiguration)\**\*test*.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
+    diagnosticsEnabled: true  # Add this line to enable diagnostic logging
+    runSettingsFile: '**/*.runsettings'  # Optional: specify a run settings file if you have one
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '**/*.trx'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
