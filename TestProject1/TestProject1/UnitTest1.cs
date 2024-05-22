@@ -17,8 +17,16 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.IsTrue(false);
             Console.WriteLine("Hello World Amit");
+            try
+            {
+                Assert.IsTrue(false);
+            }catch(Exception ex)
+            {
+                Console.WriteLine("Don " + ex.ToString());
+            }
+            Assert.IsTrue(false);
+            
             log.Info("This is the test");
         }
     }
