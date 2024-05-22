@@ -1,29 +1,24 @@
 
-using Microsoft.Extensions.Logging;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using log4net;
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
 
 namespace TestProject1
 {
     [TestClass]
     public class UnitTest1
     {
-        private readonly ILogger _logger;
+        private static readonly ILog log = LogManager.GetLogger(typeof(UnitTest1));
 
         public UnitTest1()
         {
-            var loggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder.AddConsole();
-            });
-
-            _logger = loggerFactory.CreateLogger("SpecFlowLogger");
+            
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine("Hello World");
-            _logger.LogInformation("This is the test");
+            Console.WriteLine("Hello World Amit");
+            log.Info("This is the test");
         }
     }
 }
