@@ -116,3 +116,15 @@ C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProje
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\obj\Debug\net8.0\TestProject1.pdb
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\obj\Debug\net8.0\TestProject1.genruntimeconfig.cache
 C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\obj\Debug\net8.0\ref\TestProject1.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Logging.Console.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\Amit\Desktop\spec2\Specflow-Automation-Framework\TestProject1\TestProject1\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
